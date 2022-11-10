@@ -1,0 +1,13 @@
+set the path 
+dir ==> to check the folders in current directory
+cd ===> To change directory
+mkdir ==> Make directory
+code . ==> open the current directory in visual studio code 
+
+
+
+open new terminal 
+npm init (package.json)
+npm install cypress@9.7.0
+npm install npx 
+npx cypress open 
