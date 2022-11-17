@@ -1,6 +1,3 @@
-
-
-
 describe('Verify the functionality of Radio buttons and checkbox', () => {
     beforeEach(() => {
         cy.visit('https://www.ironspider.ca/forms/checkradio.htm')
