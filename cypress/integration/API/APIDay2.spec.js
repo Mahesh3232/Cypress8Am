@@ -1,8 +1,3 @@
-
-
-
-
-
 describe('Verify the APIS',()=>{
     it('Verify the GET Api',()=>{
         cy.request({
