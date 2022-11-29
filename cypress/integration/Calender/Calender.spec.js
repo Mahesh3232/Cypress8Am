@@ -1,5 +1,3 @@
-
-
 describe('Varidy the functionality of calender', () => {
     it('Varify the calender', () => {
         cy.visit('http://www.webdriveruniversity.com/Datepicker/index.html')
@@ -15,13 +13,14 @@ describe('Varidy the functionality of calender', () => {
         cy.log(monthInText)
         cy.get('#datepicker').click()
         function getYearMonth() {
-            cy.get('.datepicker-switch').first().then((el) => {
-                // cy.log(el.text())
-                if (!el.text().includes(year)) {
-                    cy.get('.next').first().click()
-                    getYearMonth()
-                }
-            }).then(() => {
+            cy.get('.datepicker-switch').first()
+                .then((el) => {
+                    // cy.log(el.text())
+                    if (!el.text().includes(year)) {
+                        cy.get('.next').first().click()
+                        getYearMonth()
+                    }
+                }).then(() => {
                     cy.get('.datepicker-switch').first().then((el) => {
                         if (!el.text().includes(monthInText)) {
                             cy.get('.next').first().click()
@@ -32,7 +31,7 @@ describe('Varidy the functionality of calender', () => {
         }
         getYearMonth()
 
-        function getDate(){
+        function getDate() {
             cy.get('.day').contains(day).click()
         }
         getDate()
