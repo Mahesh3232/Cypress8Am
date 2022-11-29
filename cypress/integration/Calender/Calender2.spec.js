@@ -1,9 +1,4 @@
-
-
-
-
 describe('Verify the functionality of calender', () => {
-
     it('Veridy the functionality of calender', () => {
         let date = new Date()
         date.setDate(date.getDate() + 200)
@@ -30,5 +25,8 @@ describe('Verify the functionality of calender', () => {
         }
         getYear()
         cy.get('.day').contains(day).click()
+        cy.get('#datepicker').click()
+        cy.get('.datepicker-switch').first().should('have.text',monthAndYear)
+        cy.get('.active.day').should('have.text',day)
     })
 })
