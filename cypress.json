@@ -1,4 +1,7 @@
 {
-    "chromeWebSecurity": false
+    "failOnStatusCode": false,
+    "chromeWebSecurity": false,
+    "experimentalSessionAndOrigin":true,
+    "pageLoadTimeout ":1000000
    
 }
