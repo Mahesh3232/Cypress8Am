@@ -1,5 +1,3 @@
-
-
 describe('Verify the gorest APIs', () => {
     it('Verify the gorest APIs', () => {
         cy.request({
