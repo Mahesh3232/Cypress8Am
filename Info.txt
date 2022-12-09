@@ -4,10 +4,23 @@ cd ===> To change directory
 mkdir ==> Make directory
 code . ==> open the current directory in visual studio code 
 
-
-
 open new terminal 
 npm init (package.json)
 npm install cypress@9.7.0
 npm install npx 
 npx cypress open 
+
+//FileUplode 
+
+Link = https://www.npmjs.com/package/cypress-file-upload?activeTab=readme
+Step one ==> run following command in terminal 
+npm install --save-dev cypress-file-upload
+
+Step second step ==>
+paste the following code in your command.js file
+path ==> cypress/support/commands.js
+import 'cypress-file-upload';
+
+
+step 3 ==> check following code is present or not in your cypress/support/index.js
+code ==> import './commands';

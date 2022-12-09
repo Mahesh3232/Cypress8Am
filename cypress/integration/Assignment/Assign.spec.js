@@ -5,18 +5,20 @@ describe('Verify the login', () => {
             return false
         });
         cy.visit('https://www.trip.com/')
-        cy.get('.mc-hd__login-btn').click()
-        cy.window().then(win => {
-            cy.stub(win, 'open').callsFake((url, target) => {
-                //cy.log(url)
-                SecondUrl = url
-                return win.open.wrappedMethod.call(win, url, '_self')
-            }).as('open');
-            cy.get('.way_icon_gl').click()
-            cy.wait(3000)
-           // cy.log(SecondUrl)
-            //  cy.get('@open'); 
-            cy.origin(SecondUrl)
-        });
+        cy.wait(2000)
+        cy.get('#credentials-picker >div >div').click({force:true})
+        // cy.get('.mc-hd__login-btn').click()
+        // cy.window().then(win => {
+        //     cy.stub(win, 'open').callsFake((url, target) => {
+        //         //cy.log(url)
+        //         SecondUrl = url
+        //         return win.open.wrappedMethod.call(win, url, '_self')
+        //     }).as('open');
+        //     cy.get('.way_icon_gl').click()
+        //     cy.wait(3000)
+        //    // cy.log(SecondUrl)
+        //     //  cy.get('@open'); 
+        //     cy.origin(SecondUrl)
+        // });
     })
 })
