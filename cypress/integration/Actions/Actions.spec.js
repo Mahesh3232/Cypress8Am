@@ -1,6 +1,3 @@
-
-
-
 //MouseAction
 describe('Validation of mouse actions',()=>{
 
@@ -25,7 +22,21 @@ describe('Validation of mouse actions',()=>{
         cy.get('#double-click').should('have.class','div-double-click double')
     })
 
-    it.only('Verify the functionality of mouseDown',()=>{
+    it('Verify the functionality of DoubleClick',()=>{
+        cy.visit('https://practice.automationtesting.in/')
+        //cy.get('#actions').invoke('removeAttr','target').wait(1000).click()
+        cy.get('[data-product_id="163"]').focus()
+        //.scrollIntoView().trigger('mouseover',{force:true})
+    })
+
+    it.only('Verify the functionality of DoubleClick',()=>{
+        cy.visit('http://www.webdriveruniversity.com/')
+        cy.get('#actions').invoke('removeAttr','target').wait(1000).click()
+        cy.wait(2000)
+        cy.contains('Hover Over Me Second!').trigger('mouseover',{ eventConstructor: 'MouseEvent' })
+    })
+
+    it('Verify the functionality of mouseDown',()=>{
         cy.visit('http://www.webdriveruniversity.com/')
         cy.get('#actions').invoke('removeAttr','target').wait(1000).click()
         cy.wait(2000)
